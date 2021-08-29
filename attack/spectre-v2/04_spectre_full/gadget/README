@@ -1,0 +1,4 @@
+make
+ln -sf libmyspectreattack.so.1 libmyspectreattack.so
+ln -sf libmyspectreattack.so.1.0.1 libmyspectreattack.so.1
+sudo cp libmyspectreattack.so* /usr/lib/x86_64-linux-gnu/

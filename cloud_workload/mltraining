@@ -1,0 +1,3 @@
+# Simulate a workload of training LSTM
+
+python3 LSTMAD.py --training --data_dir ../perf/data/mltrain_same_core/10000us/ --save_model_name AnomalyDetectorMLtrain.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 100

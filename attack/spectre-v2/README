@@ -1,0 +1,40 @@
+Author: Wenjie Xiong
+wenjie.xiong@yale.edu
+Apr. 2019
+
+-----------------------------------
+The code is from and modified to run on Linux:
+https://github.com/msmania/microarchitectural-attack
+
+The code domostrate Spectre v1 and v2 attacks.
+-----------------------------------
+02_specre_toy:
+A toy example training the BTB within process.
+
+To run:
+$ make
+$ ./spectre --variant2
+
+-----------------------------------
+04_spectre_full:
+
+1. compile and load the code in "gadget" folder. Use the README inside.
+It is a shared library for flush+reload cache covert channel across processes. 
+
+2. use the code in "attack_clean" folder
+
+$ make
+open two terminals:
+Term1: $ ./spectre --victim
+Term2: $ ./spectre --train --probe
+The victim code is thus running in parallel with the attacker code.
+The attacker code has two threads: on thread colocate with the victim to train the BTB, the other thread reload+flush the data array.
+
+
+The code can also be run as follows:
+Term1: $ ./spectre --victiom --probe
+Term2: $ ./spectre --train
+In this case, the victim code flush+reload and retrives secret. The training thread trains the BTB. 
+
+
+*** If -std=c++17 does not compatable with your compiler, use -std=c++11

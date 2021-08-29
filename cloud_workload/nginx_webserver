@@ -1,0 +1,15 @@
+Server:
+sudo taskset 0x8 /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+
+Client:
+cd /Users/zechenghe/Desktop/Lab/side-channel-attacks/Mastik/ad/bg_program/wrk
+while loop:
+while true; do curl -X GET -v -i http://nebula1-ee.princeton.edu/?[1-1000]; done
+
+web benchmark:
+git clone git@github.com:wg/wrk.git
+cd /Users/zechenghe/Desktop/Lab/side-channel-attacks/Mastik/ad/bg_program/wrk
+./wrk -t12 -c1000 -d3000000s http://nebula1-ee.princeton.edu:80/index.html
+
+Stop Nginx:
+sudo /usr/local/nginx/sbin/nginx -s stop

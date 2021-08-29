@@ -1,0 +1,4 @@
+../build/X86/gem5.opt --debug-flags=IQ,GYGYSpecLoadBlk,MemDepUnit,IEW --debug-file=gygyspecloadblk_190430_1000.out ../configs/spectre/spectre_two_level.py
+../build/X86/gem5.opt --debug-start=3041002000 --debug-flags=IQ,GYGYSpecLoadBlk,MemDepUnit,IEW --debug-file=gygyspecloadblk_190510_0026_since3041002000.out ../configs/spectre/spectre_two_level.py
+../build/X86/gem5.opt ../configs/spectre/spectre_se.py --cpu-type=DerivO3CPU --caches --cacheline_size=64 --l1d_assoc=16 --l2cache --l2_assoc=32 -c ~/research/spectres_2019/prefetcher_channel/spectre_190309/spectre_static > out_0511_0017_se_VICTIM159_TRAINING16.out
+../build/X86/gem5.opt --debug-flags=RABEntries,GYGYAddr,RABCPU --debug-file=gygydbg_rab.out ../configs/spectre/spectre_two_level.py --test-name=hello --lqentries=32 --sqentries=32 --rab-impl

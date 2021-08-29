@@ -1,0 +1,5 @@
+sudo taskset 0x8 /etc/init.d/mysql restart
+taskset 0x8 sysbench --test=oltp --mysql-host=127.0.0.1 --mysql-user=palms_admin --mysql-db=foo --mysql-password=adminj310a --oltp-table-size=1000000 --oltp-table-name=test_table --max-time=600000000 --oltp-read-only=on --max-requests=1000 --num-threads=128 run
+
+Stop mysql:
+sudo /etc/init.d/mysql stop

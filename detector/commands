@@ -1,0 +1,31 @@
+#### train
+python3 LSTMAD.py --training --data_dir ../perf/data/mltrain_same_core/10000us/ --save_model_name AnomalyDetectorMLtrain.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 100
+
+#### eval
+python3 LSTMAD.py --testing --allanomalyscores --data_dir ../perf/data/mltrain_same_core/10000us/ --load_model_name AnomalyDetectorMLtrain.ckpt  --gpu --Pvalue_th 1e-5
+
+#### eval with a different threshold
+python3 LSTMAD.py --testing --allanomalyscores --useexistinganomalyscores --data_dir ../perf/data/mltrain_same_core/10000us/ --load_model_name AnomalyDetectorMLtrain.ckpt  --gpu --Pvalue_th 1e-5
+
+#### MLtrain Train and fine-tune
+python3 LSTMAD.py --training --data_dir ../perf/data/mltrain_same_core/10000us/ --save_model_name AnomalyDetectorMLtrain.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 500
+python3 LSTMAD.py --training --finetune --data_dir ../perf/data/mltrain_same_core/10000us/ --load_model_name AnomalyDetectorMLtrain.ckpt --save_model_name AnomalyDetectorMLtrain002.ckpt --normal_data_name_train train_normal_with_gpg.npy --normal_data_name_ref_and_val ref_and_val_normal_with_gpg.npy  --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 20 --RED_points 500
+python3 LSTMAD.py --testing --allanomalyscores --data_dir ../perf/data/mltrain_same_core/10000us/ --load_model_name AnomalyDetectorMLtrain002.ckpt  --gpu --Pvalue_th 1e-2
+
+
+#### Mysql Train and fine-tune
+python3 LSTMAD.py --training --data_dir ../perf/data/mysql_same_core/10000us/ --save_model_name AnomalyDetectorMysql.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 500
+python3 LSTMAD.py --training --finetune --data_dir ../perf/data/mysql_same_core/10000us/ --load_model_name AnomalyDetectorMysql.ckpt --save_model_name AnomalyDetectorMysql002.ckpt --normal_data_name_train train_normal_with_gpg.npy --normal_data_name_ref_and_val ref_and_val_normal_with_gpg.npy  --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 20 --RED_points 500
+python3 LSTMAD.py --testing --allanomalyscores --data_dir ../perf/data/mysql_same_core/10000us/ --load_model_name AnomalyDetectorMysql002.ckpt  --gpu --Pvalue_th 1e-2
+
+
+#### StreamServer Train and fine-tune
+python3 LSTMAD.py --training --data_dir ../perf/data/streamserver_same_core/10000us/ --save_model_name AnomalyDetectorSS.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 500
+python3 LSTMAD.py --training --finetune --data_dir ../perf/data/streamserver_same_core/10000us/ --load_model_name AnomalyDetectorSS.ckpt --save_model_name AnomalyDetectorSS002.ckpt --normal_data_name_train train_normal_with_gpg.npy --normal_data_name_ref_and_val ref_and_val_normal_with_gpg.npy  --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 20 --RED_points 500
+python3 LSTMAD.py --testing --allanomalyscores --data_dir ../perf/data/streamserver_same_core/10000us/ --load_model_name AnomalyDetectorSS002.ckpt  --gpu --Pvalue_th 1e-2
+
+
+#### WebServer Train and fine-tune
+python3 LSTMAD.py --training --data_dir ../perf/data/webserver_same_core/10000us/ --save_model_name AnomalyDetectorWS.ckpt --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 100 --RED_points 500
+python3 LSTMAD.py --training --finetune --data_dir ../perf/data/webserver_same_core/10000us/ --load_model_name AnomalyDetectorWS.ckpt --save_model_name AnomalyDetectorWS002.ckpt --normal_data_name_train train_normal_with_gpg.npy --normal_data_name_ref_and_val ref_and_val_normal_with_gpg.npy  --gpu --Nhidden 256 --LearningRate 1e-2 --Nbatches 20 --RED_points 500
+python3 LSTMAD.py --testing --allanomalyscores --data_dir ../perf/data/webserver_same_core/10000us/ --load_model_name AnomalyDetectorWS002.ckpt  --gpu --Pvalue_th 1e-2

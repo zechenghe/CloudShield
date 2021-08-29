@@ -1,0 +1,9 @@
+server:
+sudo taskset 0x8 ffserver -f doc/ffserver.conf
+sudo taskset 0x8 ffmpeg -stream_loop -1 -r 25 -i ~/test.mpg http://localhost:8090/feed1.ffm
+
+(need princeton vpn)
+client:
+http://nebula1-ee.princeton.edu:8090/feed1.ffm
+Open VLC, create a new stream video from network:
+rtsp://nebula1-ee.princeton.edu:5554/test1-rtsp.mpg

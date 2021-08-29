@@ -1,0 +1,14 @@
+#### Scripts for collecting HPCs. Please first run the corresponding cloud workload in cloud_workload/, attacks in attack/ and benign programs in bg_program/.
+
+#### Sample command
+#### Fixed background program
+
+python3 data_collection.py --core 3 --us 10000 --n_readings 12000 --bg_program mysql_same_core
+python3 data_collection.py --core 3 --us 10000 --n_readings 12000 --bg_program mltrain_same_core
+python3 data_collection.py --core 3 --us 10000 --n_readings 12000 --bg_program webserver_same_core
+python3 data_collection.py --core 3 --us 10000 --n_readings 12000 --bg_program streamserver_same_core
+
+
+#### Sequentially run regular and random attacks
+
+python3 sequential_data_collection.py --core 3 --us 10000 --n_readings 60000 --bg_program streamserver_same_core
