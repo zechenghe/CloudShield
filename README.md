@@ -1,7 +1,8 @@
 # CloudShield
 
 Implementation of anomaly detection in the cloud of the following paper:
-He, Zecheng, and Ruby B. Lee. "CloudShield: Real-time Anomaly Detection in the Cloud." arXiv preprint arXiv:2108.08977 (2021).
+
+He, Zecheng, and Ruby B. Lee. ["CloudShield: Real-time Anomaly Detection in the Cloud." arXiv preprint arXiv:2108.08977 (2021).](https://arxiv.org/abs/2108.08977)
 
 ### Data
 
