@@ -51,3 +51,14 @@ Download and put them under CloudShield/data/
         # Example command to run the HPC collection
         python3 data_collection.py --core 3 --us 10000 --n_readings 12000.
         # It collects HPCs on core #3, interval 10000 us (10ms) and total 12000 readings.
+
+### Reference
+
+You are encouraged to refer the following paper:
+
+    @article{he2021cloudshield,
+        title={CloudShield: Real-time Anomaly Detection in the Cloud},
+        author={He, Zecheng and Lee, Ruby B},
+        journal={arXiv preprint arXiv:2108.08977},
+        year={2021}
+    }
